@@ -6,20 +6,20 @@
 
     = angular-sortablejs
   </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler" type="button" (click)="navbarCollapsed = !navbarCollapsed">
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse">
+  <div class="navbar-collapse" [class.collapse]="navbarCollapsed">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" routerLink="simple">Simple sortable</a>
+        <a class="nav-link" routerLink="sortable-array">Simple sortable</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="sortable-form-array">FormArray</a>
       </li>
       <li class="nav-item" routerLinkActive="active">
         <a class="nav-link" routerLink="custom-options">Custom options</a>
-      </li>
-      <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" routerLink="reactive-forms">Reactive forms</a>
       </li>
       <li class="nav-item" routerLinkActive="active">
         <a class="nav-link" routerLink="multiple-lists">Multiple lists</a>
@@ -28,7 +28,7 @@
 
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-        <a class="nav-link" href="https://github.com/sortablejs/angular-sortablejs" target="_blank">Github</a>
+        <a class="nav-link" href="https://github.com/smnbbrv/angular-sortablejs-demo" target="_blank">Github</a>
       </li>
     </ul>
   </div>

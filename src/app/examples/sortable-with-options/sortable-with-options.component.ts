@@ -26,7 +26,7 @@ export class SortableWithOptionsComponent {
 
   eventUpdateCounter = 0;
 
-  scrollableItems = Array.from({ length: 50 }).map((u, i) => i + 1);
+  scrollableItems = Array.from({ length: 30 }).map((u, i) => i + 1);
 
   draggableOptions: SortablejsOptions = {
     draggable: '.draggable'

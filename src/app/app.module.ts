@@ -6,6 +6,8 @@ import { RouterModule } from '@angular/router';
 import { SortablejsModule } from 'angular-sortablejs';
 import { ExamplesModule } from './examples/examples.module';
 import { SortableWithOptionsComponent } from './examples/sortable-with-options/sortable-with-options.component';
+import { SortableFormArrayComponent } from './examples/sortable-form-array/sortable-form-array.component';
+import { MultipleListsComponent } from './examples/multiple-lists/multiple-lists.component';
 
 @NgModule({
   declarations: [
@@ -14,14 +16,22 @@ import { SortableWithOptionsComponent } from './examples/sortable-with-options/s
   imports: [
     BrowserModule,
     RouterModule.forRoot([
-      { path: '', pathMatch: 'full', redirectTo: 'simple' },
+      { path: '', pathMatch: 'full', redirectTo: 'sortable-array' },
       {
-        path: 'simple',
+        path: 'sortable-array',
         component: SimpleSortableComponent,
+      },
+      {
+        path: 'sortable-form-array',
+        component: SortableFormArrayComponent,
       },
       {
         path: 'custom-options',
         component: SortableWithOptionsComponent,
+      },
+      {
+        path: 'multiple-lists',
+        component: MultipleListsComponent,
       },
     ]),
 
