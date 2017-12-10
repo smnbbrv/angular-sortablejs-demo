@@ -1,6 +1,6 @@
 {
   "name": "angular-sortablejs-demo",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "author": "smnbbrv",
   "repository": {
     "type": "git",
@@ -10,8 +10,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
-    "build-prod": "ng build -prod --base-href=/angular-sortablejs-demo/ && cp docs/index.html docs/404.html",
+    "build": "ng build -prod --base-href=/angular-sortablejs-demo/ && cp docs/index.html docs/404.html",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
