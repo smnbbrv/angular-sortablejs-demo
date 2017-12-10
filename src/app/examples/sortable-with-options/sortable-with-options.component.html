@@ -1,0 +1,11 @@
+<h1>Simple sortable</h1>
+<div [sortablejs]="items">
+  <div *ngFor="let item of items" [class]="item.cssClass">{{ item.text }}</div>
+</div>
+
+<hr>
+
+<h2>See the result</h2>
+<div>
+  {{ items.join(', ') }}
+</div>
