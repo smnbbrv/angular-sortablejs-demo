@@ -8,16 +8,37 @@ import { SortablejsOptions } from 'angular-sortablejs';
 })
 export class SortableWithOptionsComponent {
 
-  items = [
-    { cssClass: 'draggable', text: '1' },
-    { cssClass: 'draggable', text: '2'  },
-    { cssClass: 'not-draggable', text: '3'  },
-    { cssClass: 'draggable', text: '4'  },
-    { cssClass: 'draggable', text: '5'  }
+  draggableItems = [
+    { draggable: true, text: '1' },
+    { draggable: true, text: '2'  },
+    { draggable: false, text: '3'  },
+    { draggable: true, text: '4'  },
+    { draggable: true, text: '5'  },
   ];
 
-  options: SortablejsOptions = {
+  eventItems = [
+    '1',
+    '2',
+    '3',
+    '4',
+    '5',
+  ];
+
+  eventUpdateCounter = 0;
+
+  scrollableItems = Array.from({ length: 50 }).map((u, i) => i + 1);
+
+  draggableOptions: SortablejsOptions = {
     draggable: '.draggable'
+  };
+
+  eventOptions: SortablejsOptions = {
+    onUpdate: () => this.eventUpdateCounter ++
+  };
+
+  scrollableOptions: SortablejsOptions = {
+    scroll: true,
+    scrollSensitivity: 100,
   };
 
 }

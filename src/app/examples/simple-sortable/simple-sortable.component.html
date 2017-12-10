@@ -1,7 +1,9 @@
 <h1>Simple sortable</h1>
 
-<p>
-  <a href="https://github.com/smnbbrv/angular-sortablejs-demo/tree/master/src/app/examples/simple-sortable" target="_blank">The source code</a>
+<p class="lead">
+  <strong>
+    <a href="https://github.com/smnbbrv/angular-sortablejs-demo/tree/master/src/app/examples/simple-sortable" target="_blank">The source code</a>
+  </strong>
 </p>
 
 The examples below show various bootstrap.css elements that can be <em>sortable</em>.
@@ -10,43 +12,45 @@ They share the same model that's why every time you drag / drop the element all 
 
 Actually everything can be sortable.
 
-<h2 class="my-3">Cards</h2>
+<h2 class="mt-4 mb-3">Button groups</h2>
 
-<div class="row" [sortablejs]="items">
-  <div class="col-sm-2 my-3" *ngFor="let item of items">
+<div class="clearfix">
+  <div class="btn-group-vertical float-left" [sortablejs]="cities">
+    <button type="button" class="btn btn-secondary" *ngFor="let city of cities">{{ city }}</button>
+  </div>
+
+  <div class="btn-group ml-3" [sortablejs]="cities">
+    <button type="button" class="btn btn-secondary" *ngFor="let city of cities">{{ city }}</button>
+  </div>
+</div>
+
+<h2 class="mt-4 mb-3">Cards</h2>
+
+<div class="row" [sortablejs]="cities">
+  <div class="col-sm-4 my-3" *ngFor="let city of cities">
     <div class="card">
-      <div class="card-header">Card {{ item }}</div>
-      <div class="card-body">Card {{ item }} text</div>
+      <div class="card-header">{{ city }}</div>
+      <div class="card-body">{{ city }} description</div>
     </div>
   </div>
 </div>
 
-<h2 class="my-3">Button groups</h2>
+<h2 class="mt-4 mb-3">Navigation cities</h2>
 
-<div class="clearfix">
-  <div class="btn-group-vertical float-left" [sortablejs]="items">
-    <button type="button" class="btn btn-secondary" *ngFor="let item of items">Button {{ item }}</button>
-  </div>
-
-  <div class="btn-group ml-3" [sortablejs]="items">
-    <button type="button" class="btn btn-secondary" *ngFor="let item of items">Button {{ item }}</button>
-  </div>
-</div>
-
-<h2 class="my-3">Navigation items</h2>
-
-<ul class="nav nav-pills mb-3" [sortablejs]="items">
-  <li class="nav-item" *ngFor="let item of items">
-    <a class="nav-link active mr-1">Nav item {{ item }}</a>
+<ul class="nav nav-pills mb-3" [sortablejs]="cities">
+  <li class="nav-item" *ngFor="let city of cities">
+    <a class="nav-link active mr-1">{{ city }}</a>
   </li>
 </ul>
 
 <nav aria-label="breadcrumb" role="navigation">
-  <ol class="breadcrumb" [sortablejs]="items">
-    <li class="breadcrumb-item active" *ngFor="let item of items">Navigation item {{ item }}</li>
+  <ol class="breadcrumb" [sortablejs]="cities">
+    <li class="breadcrumb-item active" *ngFor="let city of cities">{{ city }}</li>
   </ol>
 </nav>
 
-<h2 class="my-3">The actual model</h2>
+<h2 class="mt-4 mb-3">The actual model</h2>
 
-The result array: {{ items.join(', ') }}
+<div class="alert alert-dark">
+  > {{ cities | json }}
+</div>
