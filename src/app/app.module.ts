@@ -8,6 +8,9 @@ import { ExamplesModule } from './examples/examples.module';
 import { SortableWithOptionsComponent } from './examples/sortable-with-options/sortable-with-options.component';
 import { SortableFormArrayComponent } from './examples/sortable-form-array/sortable-form-array.component';
 import { MultipleListsComponent } from './examples/multiple-lists/multiple-lists.component';
+import { CrossComponentsMultipleListsComponent } from './test-cases/cross-components-multiple-lists/cross-components-multiple-lists.component';
+import { BsDropdownModule } from 'ngx-bootstrap';
+import { TestCasesModule } from './test-cases/test-cases.module';
 
 @NgModule({
   declarations: [
@@ -33,6 +36,11 @@ import { MultipleListsComponent } from './examples/multiple-lists/multiple-lists
         path: 'multiple-lists',
         component: MultipleListsComponent,
       },
+
+      {
+        path: 'tests/cross-components-multiple-list',
+        component: CrossComponentsMultipleListsComponent,
+      },
     ]),
 
     // global settings
@@ -40,7 +48,10 @@ import { MultipleListsComponent } from './examples/multiple-lists/multiple-lists
       animation: 200,
     }),
 
+    BsDropdownModule.forRoot(),
+
     ExamplesModule,
+    TestCasesModule,
   ],
   bootstrap: [AppComponent]
 })

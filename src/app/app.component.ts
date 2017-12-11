@@ -9,4 +9,8 @@ export class AppComponent {
 
   navbarCollapsed = true;
 
+  get showTestCases() {
+    return localStorage.getItem('showTestCases') === 'true';
+  }
+
 }
